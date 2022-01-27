@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='osx' display-mode='rendered' buildActiveScheme='true' last-migration='0900'>
     <pages>
-        <page name='Introduction'/>
         <page name='Tortoise Examples'/>
+        <page name='Introduction'/>
         <page name='Empty Canvas 1'/>
         <page name='Empty Canvas 2'/>
         <page name='Empty Canvas 3'/>
