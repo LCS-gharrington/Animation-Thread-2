@@ -45,7 +45,7 @@ canvas.fillColor = .orange
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 // Draw Triangles
-canvas.fillColor = .white
+canvas.fillColor = .yellow
 for xPostion in stride(from: 0, through: 400, by: 40) {
     for yPosition in stride (from: 200, through: 600, by: 40) {
         var figureVertices: [Point] = []
@@ -53,8 +53,13 @@ for xPostion in stride(from: 0, through: 400, by: 40) {
         figureVertices.append(Point(x: xPostion + 40, y: yPosition + 40))
         figureVertices.append(Point(x: xPostion + 40, y: yPosition + 0))
         canvas.drawCustomShape(with: figureVertices)
-        if xPostion == 0 {
+        
+        if yPosition <= xPostion + 160{
             canvas.fillColor = .yellow
+        } else if yPosition >= 600 {
+            canvas.fillColor = .yellow
+        } else {
+            canvas.fillColor = .white
         }
     }
 }
@@ -71,7 +76,7 @@ for xPostion in stride(from: 0, through: 400, by: 40) {
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .white)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 /*:
  ## Show the Live View
  Don't see any results?
