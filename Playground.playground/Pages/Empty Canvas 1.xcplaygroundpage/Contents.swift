@@ -63,20 +63,10 @@ for xPostion in stride(from: 0, through: 400, by: 40) {
         }
     }
 }
-        
 
+//Draw the text
+canvas.drawText(message: "Talking Heads", at: Point(x: 25, y: 140), size: 40, kerning: 0)
 
-
-
-
-
-
-
-
-
-
-// Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
 /*:
  ## Show the Live View
  Don't see any results?
