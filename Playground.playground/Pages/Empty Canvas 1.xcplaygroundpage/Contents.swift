@@ -67,18 +67,3 @@ for xPostion in stride(from: 0, through: 400, by: 40) {
 //Draw the text
 canvas.drawText(message: "Talking Heads", at: Point(x: 25, y: 140), size: 40, kerning: 0)
 
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
