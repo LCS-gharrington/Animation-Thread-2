@@ -40,4 +40,5 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     // Draw a dot at these points
     canvas.drawEllipse(at: Point(x: endX, y: endY), width: 5, height: 5)
     
+    canvas.drawEllipse(at: Point(x: endX, y: 450 - endY), width: 5, height: 5)
 }
