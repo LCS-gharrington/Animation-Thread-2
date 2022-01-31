@@ -21,11 +21,13 @@ canvas.drawRectangle(at: Point(x: 0, y: 455), width: 400, height: 150)
 
 // Write Text in box
 //  Write Drake/Kanye
-canvas.drawText(message: "Drake/Kanye West", at: Point(x: 25, y: 550), size: 30, kerning: 0)
-// write the date
-canvas.drawText(message: "Dec/09/2021", at: Point(x: 25, y: 510), size: 30, kerning: 0)
-// write the location
+canvas.drawText(message: "Drake/Kanye West", at: Point(x: 0, y: 550), size: 26, kerning: 0)
 
+// write the date
+canvas.drawText(message: "Dec/09/2021", at: Point(x: 0, y: 505), size: 26, kerning: 0)
+
+// write the location
+canvas.drawText(message: "Los Angeles Memorial Colisum", at: Point(x: 0, y: 463), size: 26, kerning: 0)
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 25, color: .black)
@@ -59,8 +61,10 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     
     //set thickness of lines
     canvas.defaultLineWidth = Int(9 - x)
+    
     // Draw the lines conneting the dots on the rigt side
     canvas.drawLine(from: Point(x: endX, y: endY), to: Point(x: endX, y: 450 - endY))
+    
     //draw the lines connecting the dots on the left side
     canvas.drawLine(from: Point(x: 400 - endX, y: endY), to: Point(x: 400 - endX, y: 450 - endY))
 }
