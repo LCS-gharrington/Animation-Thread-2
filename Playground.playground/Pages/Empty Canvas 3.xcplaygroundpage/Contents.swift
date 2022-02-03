@@ -30,21 +30,21 @@ canvas.drawText(message: "Drake/Kanye West", at: Point(x: 25, y: 460), size: 40,
 
 // write the date
 canvas.textColor = .black
-canvas.drawText(message: "Dec/09/2021", at: Point(x: 25, y: 555), size: 15, kerning: 0)
+canvas.drawText(message: "Dec/09/2021", at: Point(x: 312, y: 560), size: 10, kerning: 0)
 
 // write the location
 canvas.textColor = .black
-canvas.drawText(message: "Los Angeles Memorial Coliseum", at: Point(x: 25, y: 575), size: 15, kerning: 0)
+canvas.drawText(message: "Los Angeles Memorial Coliseum", at: Point(x: 215, y: 575), size: 10, kerning: 0)
 
 // write More Life in backround
-canvas.textColor = .init(hue: 203, saturation: 46, brightness: 98, alpha: 80)
-canvas.drawText(message: "More Life", at: Point(x: 25, y: 200), size: 77, kerning: 0)
+canvas.textColor = .init(hue: 203, saturation: 46, brightness: 98, alpha: 60)
+canvas.drawText(message: "More Life", at: Point(x: 25, y: 192.5), size: 77, kerning: 0)
 
 //Write some album names
 canvas.textColor = .black
-canvas.drawText(message: "Donda", at: Point.init(x: 13, y: 435), size: 10, kerning: 0)
-canvas.drawText(message: "CLB", at: Point(x: 13, y: 423), size: 10, kerning: 0)
-canvas.drawText(message: "Dark Lane Demo Tapes", at: Point(x: 13, y: 410), size: 10, kerning: 0)
+canvas.drawText(message: "Donda", at: Point.init(x: 25, y: 575), size: 10, kerning: 0)
+canvas.drawText(message: "CLB", at: Point(x: 25, y: 560), size: 10, kerning: 0)
+canvas.drawText(message: "Dark Lane Demo Tapes", at: Point(x: 25, y: 545), size: 10, kerning: 0)
 
 
 
