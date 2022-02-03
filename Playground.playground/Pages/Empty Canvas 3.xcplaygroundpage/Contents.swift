@@ -1,4 +1,4 @@
-//: [Previous](@previous) / [Next](@next)
+
 
 let preferredWidth = 400
 let preferredHeight = 600
@@ -15,22 +15,38 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
 
+//change backround
+canvas.fillColor = .init(hue: 40, saturation: 6, brightness: 100, alpha: 100)
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 455)
+                    
 // draw box at the top
-canvas.fillColor = .init(hue: 34, saturation: 39, brightness: 87, alpha: 100)
+canvas.fillColor = .init(hue: 0, saturation: 0, brightness: 97, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 455), width: 400, height: 150)
-
+          
 // Write Text in box
 //  Write Drake/Kanye
-canvas.drawText(message: "Drake/Kanye West", at: Point(x: 0, y: 550), size: 26, kerning: 0)
+canvas.textColor = .black
+canvas.drawText(message: "Drake/Kanye West", at: Point(x: 25, y: 460), size: 40, kerning: 0)
 
 // write the date
-canvas.drawText(message: "Dec/09/2021", at: Point(x: 0, y: 505), size: 26, kerning: 0)
+canvas.textColor = .black
+canvas.drawText(message: "Dec/09/2021", at: Point(x: 25, y: 555), size: 15, kerning: 0)
 
 // write the location
-canvas.drawText(message: "Los Angeles Memorial Colisum", at: Point(x: 0, y: 463), size: 26, kerning: 0)
+canvas.textColor = .black
+canvas.drawText(message: "Los Angeles Memorial Coliseum", at: Point(x: 25, y: 575), size: 15, kerning: 0)
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 25, color: .black)
+// write More Life in backround
+canvas.textColor = .init(hue: 203, saturation: 46, brightness: 98, alpha: 80)
+canvas.drawText(message: "More Life", at: Point(x: 25, y: 200), size: 77, kerning: 0)
+
+//Write some album names
+canvas.textColor = .black
+canvas.drawText(message: "Donda", at: Point.init(x: 13, y: 435), size: 10, kerning: 0)
+canvas.drawText(message: "CLB", at: Point(x: 13, y: 423), size: 10, kerning: 0)
+canvas.drawText(message: "Dark Lane Demo Tapes", at: Point(x: 13, y: 410), size: 10, kerning: 0)
+
+
 
 // Loop from 1 to 8
 let m = -25.0
@@ -51,13 +67,13 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     }
     
     // Draw a dot at these points
-    canvas.drawEllipse(at: Point(x: endX, y: endY), width: 5, height: 5)
+    //canvas.drawEllipse(at: Point(x: endX, y: endY), width: 5, height: 5)
     
-    canvas.drawEllipse(at: Point(x: endX, y: 450 - endY), width: 5, height: 5)
+    //canvas.drawEllipse(at: Point(x: endX, y: 450 - endY), width: 5, height: 5)
     
-    canvas.drawEllipse(at: Point(x: 400 - endX, y: endY), width: 5, height: 5)
+    //canvas.drawEllipse(at: Point(x: 400 - endX, y: endY), width: 5, height: 5)
     
-    canvas.drawEllipse(at: Point(x: 400 - endX, y: 450 - endY), width: 5, height: 5)
+    //canvas.drawEllipse(at: Point(x: 400 - endX, y: 450 - endY), width: 5, height: 5)
     
     //set thickness of lines
     canvas.defaultLineWidth = Int(9 - x)
@@ -67,5 +83,9 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     
     //draw the lines connecting the dots on the left side
     canvas.drawLine(from: Point(x: 400 - endX, y: endY), to: Point(x: 400 - endX, y: 450 - endY))
+   
 }
+
+
+
 
