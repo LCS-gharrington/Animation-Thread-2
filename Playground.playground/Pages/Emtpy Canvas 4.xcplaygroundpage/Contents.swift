@@ -28,9 +28,6 @@ let p = Pen(drawingUpon: canvas)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
-let scale = 20
-let diagonal = Int(sqrt(2.0)*Double(scale))
-
 
 /*:
  ## Optional code
@@ -60,11 +57,11 @@ t.penUp()
 t.left(by: 90)
 t.forward(steps: scale)
 t.right(by: 90)
+t.penDown()
 
 // Start Drawing Arrow
 func drawArrow(){
-t.penDown()
-t.forward(steps: scale*3)
+t.forward(steps: 3*scale)
 t.right(by: 90)
 t.forward(steps: scale)
 t.left(by: 135)
@@ -77,10 +74,12 @@ t.right(by: 90)
 t.forward(steps: scale*3)
 t.left(by: 90)
 t.forward(steps: scale*2)
+t.left(by: 90)
 }
 
+
 //Move to the next arrow
-func movetonextRow(){
+func movetonextRow() {
     t.penUp()
     t.backward(steps: scale*25)
     t.left(by: 90)
