@@ -21,13 +21,16 @@ import CanvasGraphics
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Create a turtle that can draw upon the canvas
-let turtle = Tortoise(drawingUpon: canvas)
+let t = Tortoise(drawingUpon: canvas)
 
 // Create a pen that can draw upon the canvas
 let p = Pen(drawingUpon: canvas)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
+let scale = 20
+let diagonal = Int(sqrt(2.0)*Double(scale))
+
 
 /*:
  ## Optional code
@@ -39,39 +42,65 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
+//Scale
+let scale = 20
+
+//Diagonal
+let diagonal = Int(sqrt(2.0)*Double(scale))
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+canvas.translate(to: Point(x: 100,
+                           y: 100))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
+//Get Into Position To Start Drawing
+t.penUp()
+t.left(by: 90)
+t.forward(steps: scale)
+t.right(by: 90)
 
- */
+// Start Drawing Arrow
+func drawArrow(){
+t.penDown()
+t.forward(steps: scale*3)
+t.right(by: 90)
+t.forward(steps: scale)
+t.left(by: 135)
+t.forward(steps: diagonal*2)
+t.left(by: 90)
+t.forward(steps: diagonal*2)
+t.left(by: 135)
+t.forward(steps: scale)
+t.right(by: 90)
+t.forward(steps: scale*3)
+t.left(by: 90)
+t.forward(steps: scale*2)
+}
 
-// Begin writing your code below (you can remove the examples shown)
+//Move to the next arrow
+func movetonextRow(){
+    t.penUp()
+    t.backward(steps: scale*25)
+    t.left(by: 90)
+    t.forward(steps: scale*4)
+    t.right(by: 90)
+    t.penDown()
+}
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+//Loop arrows
+for _ in 1 ... 6 {
+    for _ in 1 ... 5{
+        drawArrow()
+        t.penUp()
+        t.forward(steps: scale*5)
+        t.penDown()
+    }
+    movetonextRow()
+}
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
 
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
 
 /*:
  ## Show the Live View

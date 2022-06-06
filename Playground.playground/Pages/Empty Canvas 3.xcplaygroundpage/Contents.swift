@@ -15,7 +15,7 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
 
-//change backround
+//backround
 canvas.fillColor = .init(hue: 40, saturation: 6, brightness: 100, alpha: 100)
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 455)
                     
@@ -69,10 +69,13 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     // Draw a dot at these points
     //canvas.drawEllipse(at: Point(x: endX, y: endY), width: 5, height: 5)
     
+    //draw the uper left
     //canvas.drawEllipse(at: Point(x: endX, y: 450 - endY), width: 5, height: 5)
     
+    //draw bottom right
     //canvas.drawEllipse(at: Point(x: 400 - endX, y: endY), width: 5, height: 5)
     
+    //draw bottom left
     //canvas.drawEllipse(at: Point(x: 400 - endX, y: 450 - endY), width: 5, height: 5)
     
     //set thickness of lines
@@ -83,9 +86,4 @@ for x in stride(from: 0.0, through: 8.0, by: 1.0) {
     
     //draw the lines connecting the dots on the left side
     canvas.drawLine(from: Point(x: 400 - endX, y: endY), to: Point(x: 400 - endX, y: 450 - endY))
-   
 }
-
-
-
-
