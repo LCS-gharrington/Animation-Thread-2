@@ -50,7 +50,7 @@ canvas.translate(to: Point(x: 100,
                            y: 100))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: false, by: 20, color: .black)
 
 
                 
@@ -68,7 +68,28 @@ t.penUp()
 t.forward(steps: scale)
 t.penDown()
 
-// Start Drawing
+// Draw Outside
+t.forward(steps: scale)
+t.left(by: 45)
+t.forward(steps: diagonal)
+t.left(by: 90)
+t.forward(steps: diagonal)
+t.right(by: 90)
+t.forward(steps: diagonal)
+t.left(by: 90)
+t.forward(steps: diagonal)
+t.left(by: 45)
+t.forward(steps: scale)
+t.left(by: 45)
+t.forward(steps: diagonal)
+t.left(by: 90)
+t.forward(steps: diagonal)
+t.right(by: 90)
+t.forward(steps: diagonal)
+t.left(by: 90)
+t.forward(steps: diagonal)
+t.left(by: 45)
+
 
 /*:
  ## Show the Live View
