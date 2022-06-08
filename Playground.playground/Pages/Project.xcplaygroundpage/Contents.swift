@@ -65,10 +65,11 @@ canvas.drawAxes(withScale: false, by: 20, color: .black)
  */
 // Mover Turtle Into Position To draw
 t.penUp()
-t.forward(steps: 30)
+t.forward(steps: scale)
 t.penDown()
 
 // Draw Outside
+func drawShape() {
 t.forward(steps: scale*2)
 t.left(by: 60)
 t.forward(steps: scale*2)
@@ -90,18 +91,61 @@ t.left(by: 60)
 t.forward(steps: scale*2)
 t.left(by: 60)
 
-// Put P into position to Draw The Inside Hexagon
+// Put P into position to Draw The bottom Hexagon
 t.penUp()
 t.left(by: 60)
 t.forward(steps: scale)
 t.right(by: 60)
 t.penDown()
 
-//Draw Hexagon
+//Draw Hexagons
 t.forward(steps: scale)
 t.left(by: 60)
 t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale)
+t.left(by: 60)
 
+//Put pen Into position to draw Top hexagon
+t.penUp()
+t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale)
+t.left(by: 60)
+t.forward(steps: scale*3)
+t.penDown()
+
+//Draw top triangle
+t.forward(steps: scale)
+t.right(by: 60)
+t.forward(steps: scale)
+t.right(by: 60)
+t.forward(steps: scale)
+t.right(by: 60)
+t.forward(steps: scale)
+t.right(by: 60)
+t.forward(steps: scale)
+t.right(by: 60)
+t.forward(steps: scale)
+
+// get pen ready to draw next
+t.penUp()
+t.left(by: 120)
+t.forward(steps: scale*4)
+t.right(by: 60)
+t.forward(steps: scale)
+t.left(by: 120)
+t.forward(steps: scale*2)
+t.penDown()
+}
+
+drawShape()
 /*:
  ## Show the Live View
  Don't see any results?
