@@ -39,6 +39,7 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
+canvas.highPerformance = true
 //Scale
 let scale = 20
 
@@ -148,14 +149,25 @@ t.penDown()
 }
 
 //loop
-for _ in 1 ... 6 {
+for _ in 1...5{
+for _ in 1 ... 6{
     drawShape()
     t.penUp()
     moveToNextShape()
-    t.penDown()
     
 }
+    t.penDown()
+    t.penUp()
+    t.backward(steps: scale*25)
+    t.left(by: 90)
+    t.forward(steps: scale*7)
+    t.right(by: 90)
+    t.forward(steps: scale)
+    t.penDown()
+}
    
+
+canvas.highPerformance = false
 
 /*:
  ## Show the Live View
