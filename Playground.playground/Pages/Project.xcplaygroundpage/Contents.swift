@@ -133,8 +133,10 @@ t.right(by: 60)
 t.forward(steps: scale)
 t.right(by: 60)
 t.forward(steps: scale)
+}
 
 // get pen ready to draw next
+func moveToNextShape() {
 t.penUp()
 t.left(by: 120)
 t.forward(steps: scale*4)
@@ -145,7 +147,16 @@ t.forward(steps: scale*2)
 t.penDown()
 }
 
-drawShape()
+//loop
+for _ in 1 ... 6 {
+    drawShape()
+    t.penUp()
+    moveToNextShape()
+    t.penDown()
+    
+}
+   
+
 /*:
  ## Show the Live View
  Don't see any results?
